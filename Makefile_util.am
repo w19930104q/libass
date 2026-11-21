@@ -5,6 +5,12 @@ test_test_SOURCES = test/test.c
 test_test_LDADD = libass/libass.la
 test_test_LDFLAGS = $(AM_LDFLAGS) $(LIBPNG_LIBS) -static
 
+check_PROGRAMS += test/drawing_test
+TESTS += test/drawing_test$(EXEEXT)
+test_drawing_test_SOURCES = test/test_drawing.c
+test_drawing_test_LDADD = libass/libass.la
+test_drawing_test_LDFLAGS = $(AM_LDFLAGS) -static
+
 if ENABLE_PROFILE
 noinst_PROGRAMS += profile/profile
 endif
